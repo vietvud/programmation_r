@@ -1,0 +1,31 @@
+# 2.1.1
+brutToNet1 <- function(salaire_brut) #création de la fonction qui s'appelle 'brutToNet1 qui prend en entrée un argument du salaire brut
+  {
+  if(is.numeric(salaire_brut)) # condition pour que argument saisi soit du bon type
+    { salaire_net <- salaire_brut * (1 - 0.22) # calcul effectué si la condition est respecté
+      return (salaire_net)} 
+      
+  else {print("ERREUR: type not expected")}  
+}
+
+
+# 2.1.2
+brutToNet2 <- function(salaire_brut, type_sal)
+  {
+  taux <- 0.075
+  if (is.numeric(salaire_brut) & type_sal %in% c("C", "N"))
+    {
+    if (type_sal == "C")
+      {
+    salaire_net <- salaire_brut * (1 - 0.25 - taux) 
+    return (salaire_net)}
+    
+    if(type_sal == "N") 
+      { salaire_net <- salaire_brut * (1 - 0.22 - taux) 
+    return (salaire_net)}
+  }
+  
+  else {print("ERREUR. Contract unknown")}
+}
+
+# 2.1.3
